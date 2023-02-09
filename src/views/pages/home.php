@@ -11,12 +11,22 @@
     </tr>
     <?php foreach ($usuarios as $usuario): ?>
         <tr>
-            <td><?=$usuario['id'];?></td>
-            <td><?=$usuario['name'];?></td>
-            <td><?=$usuario['email'];?></td>
             <td>
-                <a href="/usuario/<?=$usuario['id'];?>/editar">[ editar ]</a>
-                <a href="/usuario/<?=$usuario['id'];?>/excluir" onclick="return confirm('Tem certeza?')">[ excluir ]</a>
+                <?= $usuario['id']; ?>
+            </td>
+            <td>
+                <?= $usuario['name']; ?>
+            </td>
+            <td>
+                <?= $usuario['email']; ?>
+            </td>
+            <td>
+                <a href="/usuario/<?= $usuario['id']; ?>/editar">
+                    <img width="20" src="/assets/images/document.jpg" alt="Editar" />
+                </a>
+                <a href="/usuario/<?= $usuario['id']; ?>/excluir" onclick="return confirm('Tem certeza?')">
+                    <img width="20" src="/assets/images/trash.jpg" alt="Excluir" />
+                </a>
             </td>
         </tr>
     <?php endforeach; ?>
