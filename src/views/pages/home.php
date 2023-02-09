@@ -16,7 +16,7 @@
             <td><?=$usuario['email'];?></td>
             <td>
                 <a href="/usuario/<?=$usuario['id'];?>/editar">[ editar ]</a>
-                <a href="/usuario/<?=$usuario['id'];?>/excluir">[ excluir ]</a>
+                <a href="/usuario/<?=$usuario['id'];?>/excluir" onclick="return confirm('Tem certeza?')">[ excluir ]</a>
             </td>
         </tr>
     <?php endforeach; ?>
