@@ -18,17 +18,24 @@ class UsuariosController extends Controller
 
         if ($name && $email) {
             $data = Usuario::select()->where('email', $email)->execute();
-            if (count($data) === 0) {
-                //insere
+            if (count($data) === 0) {                
                 Usuario::insert([
-                    'nome' => $name,
+                    'name' => $name,
                     'email' => $email
                 ])->execute();
-                //redirect para /
                 $this->redirect('/');
             }
-        }
-        //redirect para /novo
+        }        
         $this->redirect('/novo');
+    }
+
+    public function edit($args)
+    {
+        
+    }
+
+    public function del($args)
+    {
+        
     }
 }
